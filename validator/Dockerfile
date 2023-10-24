@@ -1,8 +1,5 @@
 ARG UPSTREAM_VERSION
 
-########
-# TEKU #
-########
 FROM consensys/teku:$UPSTREAM_VERSION
 
 USER root 
@@ -12,6 +9,5 @@ COPY /security/cert /cert
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
 RUN apt-get update && apt-get install ca-certificates --yes 
-
 
 ENTRYPOINT [ "entrypoint.sh" ]

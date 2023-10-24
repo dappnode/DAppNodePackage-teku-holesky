@@ -1,8 +1,5 @@
 ARG UPSTREAM_VERSION
 
-########
-# TEKU #
-########
 # IMPORTANT!: this docker image has a root user with password. Cannot execute apt update and apt install
 FROM consensys/teku:$UPSTREAM_VERSION
 

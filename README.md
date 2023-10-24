@@ -1,6 +1,6 @@
-# Teku DAppNode package (holesky config)
+# Teku DAppNode package (Holesky config)
 
-**Teku holesky ETH2.0 Beacon chain + validator**
+**Teku Holesky ETH2.0 Beacon chain + validator**
 
 Teku is a full Ethereum 2.0 client built to meet institutional needs and security requirements.
 
