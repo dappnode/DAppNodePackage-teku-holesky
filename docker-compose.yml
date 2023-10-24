@@ -14,12 +14,12 @@ services:
       EXTRA_OPTS: ""
       JAVA_OPTS: "-Xmx6g"
     volumes:
-      - "teku-prater-data:/opt/teku/data"
+      - "teku-holesky-data:/opt/teku/data"
     ports:
       - "9505:9505/tcp"
       - "9505:9505/udp"
     restart: unless-stopped
-    image: "beacon-chain.teku-prater.dnp.dappnode.eth:0.1.11"
+    image: "beacon-chain.teku-holesky.dnp.dappnode.eth:0.1.11"
     security_opt:
       - "seccomp:unconfined"
   validator:
@@ -29,7 +29,7 @@ services:
         UPSTREAM_VERSION: 23.10.0
     environment:
       LOG_TYPE: INFO
-      BEACON_NODE_ADDR: "http://beacon-chain.teku-prater.dappnode:3500"
+      BEACON_NODE_ADDR: "http://beacon-chain.teku-holesky.dappnode:3500"
       GRAFFITI: validating_from_DAppNode
       EXTRA_OPTS: ""
       EXIT_VALIDATOR: ""
@@ -37,8 +37,8 @@ services:
       FEE_RECIPIENT_ADDRESS: ""
       JAVA_OPTS: "-Xmx6g"
     restart: unless-stopped
-    image: "validator.teku-prater.dnp.dappnode.eth:0.1.11"
+    image: "validator.teku-holesky.dnp.dappnode.eth:0.1.11"
     security_opt:
       - "seccomp:unconfined"
 volumes:
-  teku-prater-data: {}
+  teku-holesky-data: {}

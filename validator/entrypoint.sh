@@ -1,11 +1,11 @@
 #!/bin/bash
 
-NETWORK="prater"
+NETWORK="holesky"
 VALIDATOR_PORT=3500
 WEB3SIGNER_API="http://web3signer.web3signer-${NETWORK}.dappnode:9000"
 
 # MEVBOOST: https://docs.teku.consensys.net/en/latest/HowTo/Builder-Network/
-if [ -n "$_DAPPNODE_GLOBAL_MEVBOOST_PRATER" ] && [ "$_DAPPNODE_GLOBAL_MEVBOOST_PRATER" == "true" ]; then
+if [ -n "$_DAPPNODE_GLOBAL_MEVBOOST_HOLESKY" ] && [ "$_DAPPNODE_GLOBAL_MEVBOOST_HOLESKY" == "true" ]; then
     echo "MEVBOOST is enabled"
     MEVBOOST_URL="http://mev-boost.mev-boost-goerli.dappnode:18550"
     EXTRA_OPTS="--validators-builder-registration-default-enabled ${EXTRA_OPTS}"
