@@ -1,20 +1,16 @@
-[ 
-    {
-        "labels": {
-            "package": "teku-prater.dnp.dappnode.eth",
-            "service": "beacon-chain.teku-prater.dappnode"
-        },
-        "targets": [
-            "beacon-chain.teku-prater.dappnode:8008"
-        ]
+[
+  {
+    "labels": {
+      "package": "teku-holesky.dnp.dappnode.eth",
+      "service": "beacon-chain.teku-holesky.dappnode"
     },
-    {
-        "labels": {
-            "package": "teku-prater.dnp.dappnode.eth",
-            "service": "validator.teku-prater.dappnode"
-        },
-        "targets": [
-            "validator.teku-prater.dappnode:8008"
-        ]
-    }
+    "targets": ["beacon-chain.teku-holesky.dappnode:8008"]
+  },
+  {
+    "labels": {
+      "package": "teku-holesky.dnp.dappnode.eth",
+      "service": "validator.teku-holesky.dappnode"
+    },
+    "targets": ["validator.teku-holesky.dappnode:8008"]
+  }
 ]
