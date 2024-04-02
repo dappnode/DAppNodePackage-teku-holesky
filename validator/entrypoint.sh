@@ -4,6 +4,18 @@ NETWORK="holesky"
 VALIDATOR_PORT=3500
 WEB3SIGNER_API="http://web3signer.web3signer-${NETWORK}.dappnode:9000"
 
+# MEVBOOST: https://docs.teku.consensys.net/en/latest/HowTo/Builder-Network/
+if [ -n "$_DAPPNODE_GLOBAL_MEVBOOST_HOLESKY" ] && [ "$_DAPPNODE_GLOBAL_MEVBOOST_HOLESKY" == "true" ]; then
+    echo "MEVBOOST is enabled"
+    MEVBOOST_URL="http://mev-boost.mev-boost-holesky.dappnode:18550"
+    EXTRA_OPTS="--validators-builder-registration-default-enabled=true ${EXTRA_OPTS}"
+
+  # If validator does not include flag --validators-proposer-blinded-blocks-enabled, append it to EXTRA_OPTS
+  if [[ $EXTRA_OPTS != *"validators-proposer-blinded-blocks-enabled"* ]]; then
+    EXTRA_OPTS="--validators-proposer-blinded-blocks-enabled=true ${EXTRA_OPTS}"
+  fi
+fi
+
 # Teku must start with the current env due to JAVA_HOME var
 exec /opt/teku/bin/teku --log-destination=CONSOLE \
   validator-client \
