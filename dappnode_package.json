@@ -36,8 +36,12 @@
   },
   "globalEnvs": [
     {
-      "envs": ["EXECUTION_CLIENT_HOLESKY"],
+      "envs": ["EXECUTION_CLIENT_HOLESKY", "MEVBOOST_HOLESKY"],
       "services": ["beacon-chain"]
+    },
+    {
+      "envs": ["MEVBOOST_HOLESKY"],
+      "services": ["validator"]
     }
   ]
 }
