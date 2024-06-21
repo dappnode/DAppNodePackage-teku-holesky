@@ -1,7 +1,7 @@
 {
   "name": "teku-holesky.dnp.dappnode.eth",
-  "version": "0.1.2",
-  "upstreamVersion": "24.3.1",
+  "version": "0.1.3",
+  "upstreamVersion": "24.6.1",
   "architectures": ["linux/amd64"],
   "upstreamRepo": "ConsenSys/teku",
   "shortDescription": "Teku Holesky Beacon chain + validator",
